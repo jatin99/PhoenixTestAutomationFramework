@@ -9,6 +9,20 @@
 name: Java CI with Maven
 
 on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Environment"
+        type: choice
+        options: [qa, dev, uat]
+        default: qa
+        required: true
+      suiteXmlFile:
+        description: "TestNG suite file"
+        type: choice
+        options: [testng.xml, smoke.xml, regression.xml]
+        default: testng.xml
+        required: true
   push:
     branches: [ "master" ]
   pull_request:
