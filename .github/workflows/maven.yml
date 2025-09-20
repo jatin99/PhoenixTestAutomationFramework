@@ -44,3 +44,14 @@ jobs:
     - name: Build with Maven
       run: mvn clean test -DsuiteXmlFile=testng.xml -Denv=qa
 
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+          name: reports-${{ env.ENV }}
+          path: |
+            target/surefire-reports/**
+            target/*.html
+            target/*.xml
+          retention-days: 7
+
