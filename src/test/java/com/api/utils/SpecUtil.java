@@ -14,7 +14,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 public class SpecUtil {
-//static method!! 
+//static method!!   
 	
 	//GET-- DEL
 	public static RequestSpecification requestSpec() {
