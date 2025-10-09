@@ -14,21 +14,18 @@ public class ReadCSVFile_MapToPOJO {
 
 	public static void main(String[] args) throws IOException, CsvException {
 
-		InputStream is=Thread.currentThread().getContextClassLoader().getResourceAsStream("testData/LoginCreds.csv");
+		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("testData/LoginCreds.csv");
 		InputStreamReader isr = new InputStreamReader(is);
-		CSVReader csvReader = new CSVReader(isr); 
-		
-		//Write the code to Map the CSV to POJO
-		
-		CsvToBean<UserPOJO> csvToBean = new CsvToBeanBuilder(csvReader)
-				.withType(UserPOJO.class)
-				.withIgnoreEmptyLine(true)
-				.build();
-		
-		
-		List<UserPOJO> userList=csvToBean.parse();
+		CSVReader csvReader = new CSVReader(isr);
+
+		// Write the code to Map the CSV to POJO
+
+		CsvToBean<UserBean> csvToBean = new CsvToBeanBuilder(csvReader).withType(UserBean.class)
+				.withIgnoreEmptyLine(true).build();
+
+		List<UserBean> userList = csvToBean.parse();
 		System.out.println(userList);
-		
+
 	}
 
 }
