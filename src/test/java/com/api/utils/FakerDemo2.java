@@ -56,19 +56,17 @@ public class FakerDemo2 {
 		CustomerProduct customerProduct = new CustomerProduct(dop, imeiSerialNumber, imeiSerialNumber, imeiSerialNumber, popUrl,1,1);
 		System.out.println(customerProduct);
 		
-		String fakeRemark =faker.lorem().sentence(10);
+		String fakeRemark =faker.lorem().sentence(5);
 		
 		//I want to generate a random number between 1 to 27
+
 		Random random = new Random();
-		int problemId= random.nextInt(26)+1;
-		
-		
+		int problemId=random.nextInt(25)+1;
 		Problems problems = new Problems(problemId, fakeRemark);
-		System.out.println(problems);
+		
 		
 		List<Problems> problemList = new ArrayList<Problems>();
 		problemList.add(problems);
-		
 		
 		
 		CreateJobPayload payload = new CreateJobPayload(0, 2, 1, 1, customer, customerAddress, customerProduct, problemList);
