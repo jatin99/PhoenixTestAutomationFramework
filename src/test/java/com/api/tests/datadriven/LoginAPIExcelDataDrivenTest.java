@@ -15,11 +15,11 @@ import static com.api.utils.SpecUtil.*;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
 
-public class LoginAPIJSONDataDrivenTest {
+public class LoginAPIExcelDataDrivenTest {
 
 	@Test(description = "Verifying if login api is working for FD user", groups = { "api", "regression",
 			"datadriven" }, dataProviderClass = com.dataproviders.DataProviderUtils.class, 
-			dataProvider = "LoginAPIExcelDataProvider")
+			dataProvider = "LoginAPIJsonDataProvider")
 	public void loginAPITest(UserCredentials userCredentials) {
 
 		given().spec(requestSpec(userCredentials)).when().post("login").then().spec(responseSpec_OK())
