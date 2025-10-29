@@ -3,7 +3,6 @@ package com.dataproviders.api.bean;
 import com.opencsv.bean.CsvBindByName;
 
 public class CreateJobBean {
-
 	@CsvBindByName(column = "mst_service_location_id")
 	private String mst_service_location_id;
 
@@ -12,7 +11,7 @@ public class CreateJobBean {
 
 	@CsvBindByName(column = "mst_warrenty_status_id")
 	private String mst_warrenty_status_id;
-	
+
 	@CsvBindByName(column = "mst_oem_id")
 	private String mst_oem_id;
 
