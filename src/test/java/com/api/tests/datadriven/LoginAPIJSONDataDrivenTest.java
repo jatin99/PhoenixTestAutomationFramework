@@ -19,7 +19,7 @@ public class LoginAPIJSONDataDrivenTest {
 
 	@Test(description = "Verifying if login api is working for FD user", groups = { "api", "regression",
 			"datadriven" }, dataProviderClass = com.dataproviders.DataProviderUtils.class, 
-			dataProvider = "LoginAPIExcelDataProvider")
+			dataProvider = "LoginAPIJsonDataProvider")
 	public void loginAPITest(UserCredentials userCredentials) {
 
 		given().spec(requestSpec(userCredentials)).when().post("login").then().spec(responseSpec_OK())
